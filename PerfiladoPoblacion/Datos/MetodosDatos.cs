@@ -40,6 +40,24 @@ namespace Datos
             return _comando;
         }
 
+        public static SqlCommand ModificacionVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2)
+        {
+            string _cadenaConexion = Configuracion.CadenaConexion;
+            SqlConnection _conexion = new SqlConnection(_cadenaConexion);
+            SqlCommand _comando = new SqlCommand("ModificarVotante", _conexion);
+            _comando.CommandTimeout = 0;
+            _comando.CommandType = CommandType.StoredProcedure;
+            _comando.Parameters.Add("@Cedula", SqlDbType.NVarChar).Value = cedula;
+            _comando.Parameters.Add("@codElec", SqlDbType.NVarChar).Value = codElec;
+            _comando.Parameters.Add("@sexo", SqlDbType.NVarChar).Value = sexo;
+            _comando.Parameters.Add("@fechaCaduc", SqlDbType.NVarChar).Value = fechaCaduc;
+            _comando.Parameters.Add("@junta", SqlDbType.NVarChar).Value = junta;
+            _comando.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
+            _comando.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = apellido1;
+            _comando.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = apellido2;
+            return _comando;
+        }
+
         public static DataTable ConsultaVotante(String cedula)
         {
             try
