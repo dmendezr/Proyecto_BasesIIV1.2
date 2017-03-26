@@ -40,7 +40,6 @@ namespace Datos
             return _comando;
         }
 
-<<<<<<< HEAD
         public static SqlCommand insertBitacora(string Usuario, string ipOrigen, string consulta, string tabla)
         {
             string _cadenaConexion = Configuracion.CadenaConexion;
@@ -51,7 +50,11 @@ namespace Datos
             _comando.Parameters.Add("@ipOrigen", SqlDbType.NVarChar).Value = ipOrigen;  
             _comando.Parameters.Add("@consulta", SqlDbType.NVarChar).Value = consulta;
             _comando.Parameters.Add("@tabla", SqlDbType.NVarChar).Value = tabla;
-=======
+            return _comando;
+        }
+
+
+
         public static SqlCommand ModificacionVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2)
         {
             string _cadenaConexion = Configuracion.CadenaConexion;
@@ -78,8 +81,6 @@ namespace Datos
             _comando.CommandTimeout = 0;
             _comando.CommandType = CommandType.StoredProcedure;
             _comando.Parameters.Add("@Cedula", SqlDbType.NVarChar).Value = cedula;
-         
->>>>>>> origin/master
             return _comando;
         }
 
