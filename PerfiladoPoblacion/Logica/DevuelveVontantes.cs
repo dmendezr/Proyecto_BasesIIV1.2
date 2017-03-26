@@ -14,6 +14,12 @@ namespace Logica
         {
             return Votante.ObtenerVotante(DatosSelect, DatosWhere);
         }
+
+        public static DataTable BuscarVotante(string cedula)
+        {
+            return Datos.Votante.BuscarVotante(cedula);
+        }
     }
+
     
 }
