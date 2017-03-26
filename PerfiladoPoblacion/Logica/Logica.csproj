@@ -48,6 +48,7 @@
     <Compile Include="ConsultaDistrito.cs" />
     <Compile Include="ConsultaLogin.cs" />
     <Compile Include="ConsultaProvincias.cs" />
+    <Compile Include="obtieneDireccionIP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DevuelveVontantes.cs" />
   </ItemGroup>
