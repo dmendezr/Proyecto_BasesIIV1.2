@@ -106,7 +106,7 @@ namespace Presentacion
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            txtNombre.Text = this.nombre;
+            
         }
 
         private void perfilacionBasicaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,6 +123,13 @@ namespace Presentacion
         private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void votanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdministracionVotante frmAdmVotante = new AdministracionVotante();
+            frmAdmVotante.MdiParent = this;
+            frmAdmVotante.Show();
         }
     }
 }
