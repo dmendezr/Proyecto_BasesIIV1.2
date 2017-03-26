@@ -34,11 +34,11 @@
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilacionBasicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilacionAvanzadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.votanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.administracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.votanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,21 @@
             this.perfilacionAvanzadaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.perfilacionAvanzadaToolStripMenuItem.Text = "Perfilacion Avanzada";
             // 
+            // administracionToolStripMenuItem
+            // 
+            this.administracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.votanteToolStripMenuItem});
+            this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
+            this.administracionToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.administracionToolStripMenuItem.Text = "Administracion";
+            // 
+            // votanteToolStripMenuItem
+            // 
+            this.votanteToolStripMenuItem.Name = "votanteToolStripMenuItem";
+            this.votanteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.votanteToolStripMenuItem.Text = "Votante";
+            this.votanteToolStripMenuItem.Click += new System.EventHandler(this.votanteToolStripMenuItem_Click);
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -99,21 +114,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // administracionToolStripMenuItem
-            // 
-            this.administracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.votanteToolStripMenuItem});
-            this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
-            this.administracionToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.administracionToolStripMenuItem.Text = "Administracion";
-            // 
-            // votanteToolStripMenuItem
-            // 
-            this.votanteToolStripMenuItem.Name = "votanteToolStripMenuItem";
-            this.votanteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.votanteToolStripMenuItem.Text = "Votante";
-            this.votanteToolStripMenuItem.Click += new System.EventHandler(this.votanteToolStripMenuItem_Click);
             // 
             // Principal
             // 

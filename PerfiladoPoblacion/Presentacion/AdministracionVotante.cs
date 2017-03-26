@@ -269,5 +269,41 @@ namespace Presentacion
             }
 
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+          
+                int consulta = Logica.MantenimientoVotante.EliminacionVotante(txtCedula.Text);
+                if (consulta == 1)
+                {
+                    MessageBox.Show("Registro fue eliminado correctamente");
+                    LimpiarCampos();
+                    txtApellido1.Enabled = false;
+                    txtApellido2.Enabled = false;
+                    cmbCodElec.Enabled = false;
+                    txtNombre.Enabled = false;
+                    dtpFechaCaduc.Enabled = false;
+                    txtJunta.Enabled = false;
+                    cmbSexo.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    btnModificar.Enabled = false;
+                    btnNuevo.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Problemas al eliminar el registro");
+                }
+            }
+            catch (Exception ex)
+            {
+                var d = new ThreadExceptionDialog(ex);
+                d.ShowDialog();
+            }
+
+
+        }
     }
 }

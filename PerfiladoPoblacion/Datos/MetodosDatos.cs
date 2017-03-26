@@ -58,6 +58,18 @@ namespace Datos
             return _comando;
         }
 
+        public static SqlCommand EliminarVotante(string cedula)
+        {
+            string _cadenaConexion = Configuracion.CadenaConexion;
+            SqlConnection _conexion = new SqlConnection(_cadenaConexion);
+            SqlCommand _comando = new SqlCommand("EliminarVotante", _conexion);
+            _comando.CommandTimeout = 0;
+            _comando.CommandType = CommandType.StoredProcedure;
+            _comando.Parameters.Add("@Cedula", SqlDbType.NVarChar).Value = cedula;
+         
+            return _comando;
+        }
+
         public static DataTable ConsultaVotante(String cedula)
         {
             try

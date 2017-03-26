@@ -35,5 +35,11 @@ namespace Datos
             SqlCommand _comando = MetodosDatos.ModificacionVotante(cedula, codElec, sexo, fechaCaduc, junta, nombre, apellido1, apellido2);
             return MetodosDatos.EjecutarProcedimientoAlmacenado(_comando);
         }
+
+        public static int EliminaVotante(string cedula)
+        {
+            SqlCommand _comando = MetodosDatos.EliminarVotante(cedula);
+            return MetodosDatos.EjecutarProcedimientoAlmacenado(_comando);
+        }
     }
 }

@@ -17,5 +17,10 @@ namespace Logica
         {
             return Datos.Votante.ModificarVotante(cedula, codElec, sexo, fechaCaduc, junta, nombre, apellido1, apellido2);
         }
+
+        public static int EliminacionVotante(string cedula)
+        {
+            return Datos.Votante.EliminaVotante(cedula);
+        }
     }
 }
