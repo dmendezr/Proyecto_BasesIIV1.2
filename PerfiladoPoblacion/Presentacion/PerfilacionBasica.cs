@@ -12,9 +12,11 @@ namespace Presentacion
 {
     public partial class PerfilacionBasica : Form
     {
+        public string usuario;
         
-        public PerfilacionBasica()
+        public PerfilacionBasica(string user)
         {
+            this.usuario = user;
             InitializeComponent();
         }
 
@@ -103,7 +105,7 @@ namespace Presentacion
             {
                 String SELECT = FormarCadena();
                 String WHERE = FormarWhere();
-                dgvConsulta.DataSource = Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE);
+                dgvConsulta.DataSource = Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE,usuario);
                 
             }catch (Exception ex)
             {

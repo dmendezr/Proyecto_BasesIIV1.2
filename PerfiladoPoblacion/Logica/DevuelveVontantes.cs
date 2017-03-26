@@ -10,9 +10,9 @@ namespace Logica
 {
     public class DevuelveVotante
     {
-        public static DataTable DevuelveVotantes(String DatosSelect, String DatosWhere)
+        public static DataTable DevuelveVotantes(String DatosSelect, String DatosWhere, string usuario)
         {
-            return Votante.ObtenerVotante(DatosSelect, DatosWhere);
+            return Votante.ObtenerVotante(DatosSelect, DatosWhere,usuario,Logica.obtieneDireccionIP.DevuelveIP());
         }
 
         public static DataTable BuscarVotante(string cedula)

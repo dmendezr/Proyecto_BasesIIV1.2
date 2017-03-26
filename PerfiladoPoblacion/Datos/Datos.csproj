@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="Bitacora.cs" />
     <Compile Include="Canton.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CodigoElectoral.cs" />

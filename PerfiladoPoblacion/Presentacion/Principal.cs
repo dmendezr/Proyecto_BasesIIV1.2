@@ -13,12 +13,14 @@ namespace Presentacion
     public partial class Principal : Form
     {
         private string usuario;
-        private int idRol;
+        public int idRol { get; set;}
         private string nombre;
         private string apellido1;
         private string apellido2;
         private int childFormNumber = 0;
+        private string direccionIP;
 
+        
         public Principal(string usuario, int idRol, string nombre, string apellido1, string apellido2)
         {
             this.usuario = usuario;
@@ -106,12 +108,12 @@ namespace Presentacion
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            
+            direccionIP = Logica.obtieneDireccionIP.DevuelveIP();
         }
 
         private void perfilacionBasicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PerfilacionBasica frmBasica = new PerfilacionBasica();
+            PerfilacionBasica frmBasica = new PerfilacionBasica(usuario);
             frmBasica.MdiParent = this;
             frmBasica.Show();
         }

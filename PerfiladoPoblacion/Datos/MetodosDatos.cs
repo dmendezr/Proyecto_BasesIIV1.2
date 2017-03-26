@@ -40,6 +40,19 @@ namespace Datos
             return _comando;
         }
 
+        public static SqlCommand insertBitacora(string Usuario, string ipOrigen, string consulta, string tabla)
+        {
+            string _cadenaConexion = Configuracion.CadenaConexion;
+            SqlConnection _conexion = new SqlConnection(_cadenaConexion);
+            SqlCommand _comando = new SqlCommand("AgregaBitacora", _conexion);
+            _comando.CommandType = CommandType.StoredProcedure;
+            _comando.Parameters.Add("@Usuario", SqlDbType.NVarChar).Value = Usuario;
+            _comando.Parameters.Add("@ipOrigen", SqlDbType.NVarChar).Value = ipOrigen;  
+            _comando.Parameters.Add("@consulta", SqlDbType.NVarChar).Value = consulta;
+            _comando.Parameters.Add("@tabla", SqlDbType.NVarChar).Value = tabla;
+            return _comando;
+        }
+
         public static DataTable ConsultaVotante(String cedula)
         {
             try
