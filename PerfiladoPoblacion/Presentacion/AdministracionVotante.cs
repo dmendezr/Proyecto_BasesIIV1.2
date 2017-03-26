@@ -68,10 +68,93 @@ namespace Presentacion
 
         }
 
+        private string ManejarFecha()
+        {
+            string fecha = "";
+            string dia = "";
+            string mes = "";
+            switch (dtpFechaCaduc.Value.Day.ToString())
+            {
+                case "1":
+                    dia = "01";
+                    break;
+                case "2":
+                    dia = "02";
+                    break;
+                case "3":
+                    dia = "03";
+                    break;
+                case "4":
+                    dia = "04";
+                    break;
+                case "5":
+                    dia = "05";
+                    break;
+                case "6":
+                    dia = "06";
+                    break;
+                case "7":
+                    dia = "07";
+                    break;
+                case "8":
+                    dia = "08";
+                    break;
+                case "9":
+                    dia = "09";
+                    break;
+
+                default:
+                    dia = dtpFechaCaduc.Value.Day.ToString();
+                    break;
+            }
+            switch (dtpFechaCaduc.Value.Month.ToString())
+            {
+                case "1":
+                    mes = "01";
+                    break;
+                case "2":
+                    mes = "02";
+                    break;
+                case "3":
+                    mes = "03";
+                    break;
+                case "4":
+                    mes = "04";
+                    break;
+                case "5":
+                    mes = "05";
+                    break;
+                case "6":
+                    mes = "06";
+                    break;
+                case "7":
+                    mes = "07";
+                    break;
+                case "8":
+                    mes = "08";
+                    break;
+                case "9":
+                    mes = "09";
+                    break;
+
+                default:
+                    mes = dtpFechaCaduc.Value.Month.ToString();
+                    break;
+            }
+
+            fecha = dtpFechaCaduc.Value.Year.ToString() + mes + dia;
+
+            
+            return fecha;
+
+        }
+
+
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             try
             {
+                string fecha;
                 string sexo;
                 if (cmbSexo.Text == "Masculino")
                 {
@@ -81,7 +164,8 @@ namespace Presentacion
                 {
                     sexo = "2";
                 }
-                int consulta = Logica.MantenimientoVotante.InsertDeVotante(txtCedula.Text, cmbCodElec.Text, sexo, dtpFechaCaduc.Text,txtJunta.Text,txtNombre.Text,txtApellido1.Text,txtApellido2.Text);
+                fecha = ManejarFecha();
+                int consulta = Logica.MantenimientoVotante.InsertDeVotante(txtCedula.Text, cmbCodElec.Text, sexo, fecha,txtJunta.Text,txtNombre.Text,txtApellido1.Text,txtApellido2.Text);
                 if (consulta == 1)
                 {
                     MessageBox.Show("Registro Ingresado Correctamente");
@@ -140,6 +224,86 @@ namespace Presentacion
                 d.ShowDialog();
             }
            
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string fecha = "";
+                string sexo;
+                if (cmbSexo.Text == "Masculino")
+                {
+                    sexo = "1";
+                }
+                else
+                {
+                    sexo = "2";
+                }
+                fecha = ManejarFecha();
+                int consulta = Logica.MantenimientoVotante.ModificacionVotante(txtCedula.Text, cmbCodElec.Text, sexo, fecha, txtJunta.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text);
+                if (consulta == 1)
+                {
+                    MessageBox.Show("Registro fue modificado correctamente");
+                    LimpiarCampos();
+                    txtApellido1.Enabled = false;
+                    txtApellido2.Enabled = false;
+                    cmbCodElec.Enabled = false;
+                    txtNombre.Enabled = false;
+                    dtpFechaCaduc.Enabled = false;
+                    txtJunta.Enabled = false;
+                    cmbSexo.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    btnModificar.Enabled = false;
+                    btnNuevo.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Problemas con la modificacion del nuevo registro");
+                }
+            }
+            catch (Exception ex)
+            {
+                var d = new ThreadExceptionDialog(ex);
+                d.ShowDialog();
+            }
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+          
+                int consulta = Logica.MantenimientoVotante.EliminacionVotante(txtCedula.Text);
+                if (consulta == 1)
+                {
+                    MessageBox.Show("Registro fue eliminado correctamente");
+                    LimpiarCampos();
+                    txtApellido1.Enabled = false;
+                    txtApellido2.Enabled = false;
+                    cmbCodElec.Enabled = false;
+                    txtNombre.Enabled = false;
+                    dtpFechaCaduc.Enabled = false;
+                    txtJunta.Enabled = false;
+                    cmbSexo.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    btnModificar.Enabled = false;
+                    btnNuevo.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Problemas al eliminar el registro");
+                }
+            }
+            catch (Exception ex)
+            {
+                var d = new ThreadExceptionDialog(ex);
+                d.ShowDialog();
+            }
+
+
         }
     }
 }

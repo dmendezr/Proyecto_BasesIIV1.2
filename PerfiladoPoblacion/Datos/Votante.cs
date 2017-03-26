@@ -31,5 +31,17 @@ namespace Datos
         {
             return MetodosDatos.ConsultaVotante(Cedula);
         }
+
+        public static int ModificarVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2)
+        {
+            SqlCommand _comando = MetodosDatos.ModificacionVotante(cedula, codElec, sexo, fechaCaduc, junta, nombre, apellido1, apellido2);
+            return MetodosDatos.EjecutarProcedimientoAlmacenado(_comando);
+        }
+
+        public static int EliminaVotante(string cedula)
+        {
+            SqlCommand _comando = MetodosDatos.EliminarVotante(cedula);
+            return MetodosDatos.EjecutarProcedimientoAlmacenado(_comando);
+        }
     }
 }

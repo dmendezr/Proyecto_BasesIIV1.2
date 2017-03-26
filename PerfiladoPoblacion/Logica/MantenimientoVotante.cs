@@ -12,5 +12,15 @@ namespace Logica
         {
             return Datos.Votante.InsertarVotante(cedula, codElec, sexo, fechaCaduc, junta, nombre, apellido1, apellido2);
         }
+
+        public static int ModificacionVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2)
+        {
+            return Datos.Votante.ModificarVotante(cedula, codElec, sexo, fechaCaduc, junta, nombre, apellido1, apellido2);
+        }
+
+        public static int EliminacionVotante(string cedula)
+        {
+            return Datos.Votante.EliminaVotante(cedula);
+        }
     }
 }
