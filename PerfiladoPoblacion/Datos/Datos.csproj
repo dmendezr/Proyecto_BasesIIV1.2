@@ -43,6 +43,7 @@
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="Canton.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CodigoElectoral.cs" />
     <Compile Include="Distrito.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Provincia.cs" />

@@ -22,16 +22,46 @@ namespace Datos
             return _comando;
         }
 
-        public static SqlCommand CrearComandoProc()
+
+        public static SqlCommand InsertDeVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2)
         {
             string _cadenaConexion = Configuracion.CadenaConexion;
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
-            SqlCommand _comando = new SqlCommand("InsDatos", _conexion);
+            SqlCommand _comando = new SqlCommand("InsertDeVotante", _conexion);
             _comando.CommandType = CommandType.StoredProcedure;
+            _comando.Parameters.Add("@Cedula", SqlDbType.NVarChar).Value = cedula;
+            _comando.Parameters.Add("@codElec", SqlDbType.NVarChar).Value = codElec;
+            _comando.Parameters.Add("@sexo", SqlDbType.NVarChar).Value = sexo;
+            _comando.Parameters.Add("@fechaCaduc", SqlDbType.NVarChar).Value = fechaCaduc;
+            _comando.Parameters.Add("@junta", SqlDbType.NVarChar).Value = junta;
+            _comando.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
+            _comando.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = apellido1;
+            _comando.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = apellido2;
             return _comando;
         }
 
-        public static int EjecutarComandoInsert(SqlCommand comando)
+        public static DataTable ConsultaVotante(String cedula)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string _cadenaConexion = Configuracion.CadenaConexion;
+                SqlConnection _conexion = new SqlConnection();
+                _conexion.ConnectionString = _cadenaConexion;
+                SqlDataAdapter da = new SqlDataAdapter("BuscarVotante",_conexion);
+                _conexion.Open();
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@cedula", SqlDbType.NVarChar).Value = cedula;
+                da.Fill(dt);
+                _conexion.Dispose();
+                _conexion.Close();
+                return dt;
+            }
+            catch { throw; }
+        }
+
+
+        public static int EjecutarProcedimientoAlmacenado(SqlCommand comando)
         {
             try
             {

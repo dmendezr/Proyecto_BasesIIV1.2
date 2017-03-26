@@ -37,9 +37,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCedula = new System.Windows.Forms.TextBox();
-            this.txtCodElec = new System.Windows.Forms.TextBox();
-            this.txtSexo = new System.Windows.Forms.TextBox();
-            this.txtFechaCaduc = new System.Windows.Forms.TextBox();
             this.txtJunta = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido1 = new System.Windows.Forms.TextBox();
@@ -49,6 +46,9 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
+            this.cmbCodElec = new System.Windows.Forms.ComboBox();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
+            this.dtpFechaCaduc = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -130,28 +130,6 @@
             this.txtCedula.Size = new System.Drawing.Size(268, 20);
             this.txtCedula.TabIndex = 9;
             // 
-            // txtCodElec
-            // 
-            this.txtCodElec.Location = new System.Drawing.Point(92, 88);
-            this.txtCodElec.Name = "txtCodElec";
-            this.txtCodElec.Size = new System.Drawing.Size(268, 20);
-            this.txtCodElec.TabIndex = 10;
-            this.txtCodElec.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // txtSexo
-            // 
-            this.txtSexo.Location = new System.Drawing.Point(83, 120);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(277, 20);
-            this.txtSexo.TabIndex = 11;
-            // 
-            // txtFechaCaduc
-            // 
-            this.txtFechaCaduc.Location = new System.Drawing.Point(120, 147);
-            this.txtFechaCaduc.Name = "txtFechaCaduc";
-            this.txtFechaCaduc.Size = new System.Drawing.Size(240, 20);
-            this.txtFechaCaduc.TabIndex = 12;
-            // 
             // txtJunta
             // 
             this.txtJunta.Location = new System.Drawing.Point(431, 57);
@@ -188,6 +166,7 @@
             this.btnBuscar.TabIndex = 17;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnModificar
             // 
@@ -227,11 +206,40 @@
             this.btnInsertar.UseVisualStyleBackColor = true;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
+            // cmbCodElec
+            // 
+            this.cmbCodElec.FormattingEnabled = true;
+            this.cmbCodElec.Location = new System.Drawing.Point(99, 85);
+            this.cmbCodElec.Name = "cmbCodElec";
+            this.cmbCodElec.Size = new System.Drawing.Size(121, 21);
+            this.cmbCodElec.TabIndex = 22;
+            // 
+            // cmbSexo
+            // 
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino"});
+            this.cmbSexo.Location = new System.Drawing.Point(99, 117);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(121, 21);
+            this.cmbSexo.TabIndex = 23;
+            // 
+            // dtpFechaCaduc
+            // 
+            this.dtpFechaCaduc.Location = new System.Drawing.Point(120, 150);
+            this.dtpFechaCaduc.Name = "dtpFechaCaduc";
+            this.dtpFechaCaduc.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaCaduc.TabIndex = 24;
+            // 
             // AdministracionVotante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 500);
+            this.Controls.Add(this.dtpFechaCaduc);
+            this.Controls.Add(this.cmbSexo);
+            this.Controls.Add(this.cmbCodElec);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnModificar);
@@ -240,9 +248,6 @@
             this.Controls.Add(this.txtApellido1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtJunta);
-            this.Controls.Add(this.txtFechaCaduc);
-            this.Controls.Add(this.txtSexo);
-            this.Controls.Add(this.txtCodElec);
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -272,9 +277,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.TextBox txtCodElec;
-        private System.Windows.Forms.TextBox txtSexo;
-        private System.Windows.Forms.TextBox txtFechaCaduc;
         private System.Windows.Forms.TextBox txtJunta;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido1;
@@ -284,5 +286,8 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnInsertar;
+        private System.Windows.Forms.ComboBox cmbCodElec;
+        private System.Windows.Forms.ComboBox cmbSexo;
+        private System.Windows.Forms.DateTimePicker dtpFechaCaduc;
     }
 }
