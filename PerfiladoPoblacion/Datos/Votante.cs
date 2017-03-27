@@ -15,7 +15,8 @@ namespace Datos
         {
 
             SqlCommand _comando = MetodosDatos.CrearComando();
-            _comando.CommandText = "SELECT " + DatosSELECT + " FROM dbo.Votante Vot JOIN dbo.CodElec as codE ON Vot.CodElec = codE.CodElec JOIN dbo.Canton as Cant ON Cant.codCanton = codE.codCanton JOIN dbo.Provincia as Prov ON Prov.codProvincia = codE.codProvincia WHERE " + DatosWhere + ";";
+            _comando.CommandText = "SELECT " + DatosSELECT + " FROM dbo.Votantes Vot JOIN dbo.CodElec as codE ON Vot.CodElec = codE.CodElec JOIN dbo.Canton as Cant ON Cant.codCanton = codE.codCanton JOIN dbo.Provincia as Prov ON Prov.codProvincia = codE.codProvincia WHERE " + DatosWhere + ";";
+            _comando.CommandTimeout = 0;
             Bitacora.InsertarBitacora(Usuario, ip, _comando.CommandText, "null");
             return MetodosDatos.EjecutarComandoSelect(_comando);
         }
