@@ -20,6 +20,23 @@ namespace Presentacion
             InitializeComponent();
         }
 
+        public void limpiarCampos()
+        {
+            txtApellido1.Text = "";
+            txtApellido2.Text = "";
+            txtCedula.Text = "";
+            txtCodElec.Text = "";
+            txtEdad.Text = "";
+            txtFechaCaduc.Text = "";
+            txtJunta.Text = "";
+            txtNombre.Text = "";
+            cbCanton.Text = "";
+            cbDistrito.Text = "";
+            cbProvincia.Text = "";
+            cbDistrito.Text = "";
+            cbSexo.Text = "";
+        }
+
         public String FormarWhere()
         {
             Logica.ConstruyeWhere objConstructorWhere = new ConstruyeWhere();
@@ -27,7 +44,44 @@ namespace Presentacion
             {
                 objConstructorWhere.filtraCedula(txtCedula.Text);
             }
+            if (txtNombre.Text != "")
+            {
+                objConstructorWhere.filtrarNombre(txtNombre.Text);
+            }
+            if(txtApellido1.Text != "")
+            {
+                objConstructorWhere.filtrarApellido1(txtApellido1.Text);
+            }
+            if (txtApellido2.Text != ""){
+                objConstructorWhere.filtrarApellido2(txtApellido2.Text);
+            }
+            if (txtJunta.Text != "")
+            {
+                objConstructorWhere.filtrarJunta(txtJunta.Text);
+            }
+            if (txtFechaCaduc.Text != "")
+            {
+                objConstructorWhere.filtrarFechaCaduc(txtFechaCaduc.Text);
+            }
+            if (cbSexo.Text != "")
+            {
+                objConstructorWhere.filtrarSexo(txtFechaCaduc.Text);
+            }
+            if (cbCanton.Text != "")
+            {
+                objConstructorWhere.filtrarSexo(cbCanton.Text);
+            }
+            if (cbDistrito.Text != "")
+            {
+                objConstructorWhere.filtrarDistrito(cbDistrito.Text);
+            }
+            if (cbProvincia.Text != "")
+            {
+                objConstructorWhere.filtrarProvincia(cbProvincia.Text);
+            }
+
             return objConstructorWhere.devuelveCadena();
+
         }
         public String FormarCadena()
         {
@@ -106,6 +160,7 @@ namespace Presentacion
                 String SELECT = FormarCadena();
                 String WHERE = FormarWhere();
                 dgvConsulta.DataSource = Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE,usuario);
+                limpiarCampos();
                 
             }catch (Exception ex)
             {
@@ -123,6 +178,7 @@ namespace Presentacion
             cbCanton.ValueMember = "Nombre";
             cbDistrito.DataSource = Logica.ConsultaDistrito.devuelveDistrito();
             cbDistrito.ValueMember = "Distrito";
+            limpiarCampos();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -133,6 +189,11 @@ namespace Presentacion
         private void txtCedula_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
         }
     }
 }
