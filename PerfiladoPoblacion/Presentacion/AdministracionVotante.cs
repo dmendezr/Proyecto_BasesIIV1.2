@@ -305,5 +305,10 @@ namespace Presentacion
 
 
         }
+
+        private void cmbCodElec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

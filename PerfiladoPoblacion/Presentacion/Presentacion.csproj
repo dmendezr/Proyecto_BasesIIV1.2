@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionCanton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministracionCanton.Designer.cs">
+      <DependentUpon>AdministracionCanton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministracionDistricto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministracionDistricto.Designer.cs">
+      <DependentUpon>AdministracionDistricto.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdministracionVotante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdministracionCanton.resx">
+      <DependentUpon>AdministracionCanton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministracionDistricto.resx">
+      <DependentUpon>AdministracionDistricto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdministracionVotante.resx">
       <DependentUpon>AdministracionVotante.cs</DependentUpon>
     </EmbeddedResource>

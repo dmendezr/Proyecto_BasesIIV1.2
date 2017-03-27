@@ -39,6 +39,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.cantonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distritoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +89,9 @@
             // administracionToolStripMenuItem
             // 
             this.administracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.votanteToolStripMenuItem});
+            this.votanteToolStripMenuItem,
+            this.cantonToolStripMenuItem,
+            this.distritoToolStripMenuItem});
             this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
             this.administracionToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.administracionToolStripMenuItem.Text = "Administracion";
@@ -114,6 +118,20 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
+            // 
+            // cantonToolStripMenuItem
+            // 
+            this.cantonToolStripMenuItem.Name = "cantonToolStripMenuItem";
+            this.cantonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cantonToolStripMenuItem.Text = "Canton";
+            this.cantonToolStripMenuItem.Click += new System.EventHandler(this.cantonToolStripMenuItem_Click);
+            // 
+            // distritoToolStripMenuItem
+            // 
+            this.distritoToolStripMenuItem.Name = "distritoToolStripMenuItem";
+            this.distritoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.distritoToolStripMenuItem.Text = "Distrito";
+            this.distritoToolStripMenuItem.Click += new System.EventHandler(this.distritoToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -149,6 +167,8 @@
         private System.Windows.Forms.ToolStripMenuItem perfilacionAvanzadaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administracionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem votanteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cantonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem distritoToolStripMenuItem;
     }
 }
 

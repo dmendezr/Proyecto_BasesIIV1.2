@@ -215,6 +215,7 @@
             this.cmbCodElec.Name = "cmbCodElec";
             this.cmbCodElec.Size = new System.Drawing.Size(121, 21);
             this.cmbCodElec.TabIndex = 22;
+            this.cmbCodElec.SelectedIndexChanged += new System.EventHandler(this.cmbCodElec_SelectedIndexChanged);
             // 
             // cmbSexo
             // 

@@ -197,5 +197,87 @@ namespace Datos
             return _tabla;
         }
 
+        public static SqlCommand InsertCanton(string codCanton, string nombre)
+        {
+            string _cadenaConexion = Configuracion.CadenaConexion;
+            SqlConnection _conexion = new SqlConnection(_cadenaConexion);
+            SqlCommand _comando = new SqlCommand("InsertarCanton", _conexion);
+            _comando.CommandType = CommandType.StoredProcedure;          
+            _comando.Parameters.Add("@codCanton", SqlDbType.NVarChar).Value = codCanton;
+            _comando.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
+
+            return _comando;
+        }
+
+        public static DataTable ConsultaCanton(String codCanton)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string _cadenaConexion = Configuracion.CadenaConexion;
+                SqlConnection _conexion = new SqlConnection();
+                _conexion.ConnectionString = _cadenaConexion;
+                SqlDataAdapter da = new SqlDataAdapter("BuscarCanton", _conexion);
+                _conexion.Open();
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@codCanton", SqlDbType.NVarChar).Value = codCanton;
+                da.Fill(dt);
+                _conexion.Dispose();
+                _conexion.Close();
+                return dt;
+            }
+            catch { throw; }
+        }
+
+
+        public static SqlCommand ModificarCanton(string codCanton, string nombre)
+        {
+            string _cadenaConexion = Configuracion.CadenaConexion;
+            SqlConnection _conexion = new SqlConnection(_cadenaConexion);
+            SqlCommand _comando = new SqlCommand("ModificarCanton", _conexion);
+            _comando.CommandTimeout = 0;
+            _comando.CommandType = CommandType.StoredProcedure;
+            _comando.Parameters.Add("@codCanton", SqlDbType.NVarChar).Value = codCanton;
+            _comando.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
+           
+            return _comando;
+        }
+
+        public static SqlCommand InsertarDistrito(string CodElec, string CodProvincia, string CodCanton, string Distrito)
+        {
+            string _cadenaConexion = Configuracion.CadenaConexion;
+            SqlConnection _conexion = new SqlConnection(_cadenaConexion);
+            SqlCommand _comando = new SqlCommand("InsertarDistrito", _conexion);
+            _comando.CommandType = CommandType.StoredProcedure;
+            _comando.Parameters.Add("@Cod_Elec", SqlDbType.NVarChar).Value = CodElec;
+            _comando.Parameters.Add("@codProvincia", SqlDbType.NVarChar).Value = CodProvincia;
+            _comando.Parameters.Add("@codCanton", SqlDbType.NVarChar).Value = CodCanton;
+            _comando.Parameters.Add("@Distrito", SqlDbType.NVarChar).Value = Distrito;
+
+
+            return _comando;
+        }
+
+        public static DataTable BuscarDistrito (String codElec)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string _cadenaConexion = Configuracion.CadenaConexion;
+                SqlConnection _conexion = new SqlConnection();
+                _conexion.ConnectionString = _cadenaConexion;
+                SqlDataAdapter da = new SqlDataAdapter("BuscarDistrito", _conexion);
+                _conexion.Open();
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@CodElec", SqlDbType.NVarChar).Value = codElec;
+                da.Fill(dt);
+                _conexion.Dispose();
+                _conexion.Close();
+                return dt;
+            }
+            catch { throw; }
+        }
+
+
     }//fin SqlCommand
 }

@@ -133,5 +133,19 @@ namespace Presentacion
             frmAdmVotante.MdiParent = this;
             frmAdmVotante.Show();
         }
+
+        private void cantonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdministracionCanton frmAdmCanton = new AdministracionCanton();
+            frmAdmCanton.MdiParent = this;
+            frmAdmCanton.Show();
+        }
+
+        private void distritoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdministracionDistricto frmAdmDistrito = new AdministracionDistricto();
+            frmAdmDistrito.MdiParent = this;
+            frmAdmDistrito.Show();
+        }
     }
 }

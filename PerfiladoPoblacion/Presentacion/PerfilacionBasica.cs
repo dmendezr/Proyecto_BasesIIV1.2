@@ -134,5 +134,10 @@ namespace Presentacion
         {
 
         }
+
+        private void cbDistrito_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

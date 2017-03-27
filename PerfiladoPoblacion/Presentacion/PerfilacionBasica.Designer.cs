@@ -430,6 +430,7 @@
             this.cbDistrito.Name = "cbDistrito";
             this.cbDistrito.Size = new System.Drawing.Size(93, 21);
             this.cbDistrito.TabIndex = 30;
+            this.cbDistrito.SelectedIndexChanged += new System.EventHandler(this.cbDistrito_SelectedIndexChanged);
             // 
             // button1
             // 
