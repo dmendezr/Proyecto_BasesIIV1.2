@@ -147,5 +147,13 @@ namespace Presentacion
             frmAdmDistrito.MdiParent = this;
             frmAdmDistrito.Show();
         }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Usuarios frmAdmUsuarios = new Usuarios();
+            frmAdmUsuarios.MdiParent = this;
+            frmAdmUsuarios.Show();
+
+        }
     }
 }

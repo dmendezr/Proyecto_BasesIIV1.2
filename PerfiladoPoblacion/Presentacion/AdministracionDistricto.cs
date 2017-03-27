@@ -40,7 +40,6 @@ namespace Presentacion
             txtCodElec.Text = "";
             cmbCodCanton.Text = "";
             cmbCodProvincia.Text = "";
-            btnEliminar.Text = "";
             btnModificar.Text = "";
 
         }
@@ -61,10 +60,9 @@ namespace Presentacion
                     txtDistrito.Enabled = false;
                     cmbCodProvincia.Enabled = false;
                     cmbCodCanton.Enabled = false;
-                    
-                    btnEliminar.Enabled = false;
+                  
                     btnModificar.Enabled = false;
-                  //  btnNuevo.Show();
+                    btnNuevo.Show();
                 }
                 else
                 {
@@ -88,7 +86,6 @@ namespace Presentacion
                 cmbCodCanton.Enabled = true;
                 cmbCodProvincia.Enabled = true;
                 
-                btnEliminar.Enabled = true;
                 btnModificar.Enabled = true;
                 datos = Logica.MantenimientoDistrito.BuscarDistrito(txtCodElec.Text);
                 DataRow row = datos.Rows[0];
@@ -106,5 +103,45 @@ namespace Presentacion
 
         }
     }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                int consulta = Logica.MantenimientoDistrito.ModicarDistrito(txtCodElec.Text, cmbCodProvincia.Text, cmbCodCanton.Text, txtDistrito.Text);
+                if (consulta == 1)
+                {
+                    MessageBox.Show("Registro fue modificado correctamente");
+                    LimpiarCampos();
+                    txtCodElec.Enabled = false;
+                    txtDistrito.Enabled = false;
+                    cmbCodCanton.Enabled = false;
+                    cmbCodProvincia.Enabled = false;
+                    
+                    btnModificar.Enabled = false;
+                    btnNuevo.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Problemas con la modificacion del nuevo registro");
+                }
+            }
+            catch (Exception ex)
+            {
+                var d = new ThreadExceptionDialog(ex);
+                d.ShowDialog();
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+            btnBuscar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnNuevo.Hide();
+            txtCodElec.Enabled = true;
+            txtDistrito.Enabled = true;
+        }
     }
 }

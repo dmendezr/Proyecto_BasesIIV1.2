@@ -191,15 +191,15 @@ namespace Presentacion
 
         }
 
-<<<<<<< HEAD
+
         private void cbDistrito_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-=======
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             limpiarCampos();
->>>>>>> 0f32f139a0ae1de1034081038db595864be3de67
         }
     }
 }

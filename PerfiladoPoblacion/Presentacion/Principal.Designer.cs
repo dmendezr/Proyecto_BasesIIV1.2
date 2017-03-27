@@ -36,11 +36,12 @@
             this.perfilacionAvanzadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.votanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cantonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distritoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cantonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.distritoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +92,8 @@
             this.administracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.votanteToolStripMenuItem,
             this.cantonToolStripMenuItem,
-            this.distritoToolStripMenuItem});
+            this.distritoToolStripMenuItem,
+            this.usuarioToolStripMenuItem});
             this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
             this.administracionToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.administracionToolStripMenuItem.Text = "Administracion";
@@ -99,9 +101,23 @@
             // votanteToolStripMenuItem
             // 
             this.votanteToolStripMenuItem.Name = "votanteToolStripMenuItem";
-            this.votanteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.votanteToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.votanteToolStripMenuItem.Text = "Votante";
             this.votanteToolStripMenuItem.Click += new System.EventHandler(this.votanteToolStripMenuItem_Click);
+            // 
+            // cantonToolStripMenuItem
+            // 
+            this.cantonToolStripMenuItem.Name = "cantonToolStripMenuItem";
+            this.cantonToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.cantonToolStripMenuItem.Text = "Canton";
+            this.cantonToolStripMenuItem.Click += new System.EventHandler(this.cantonToolStripMenuItem_Click);
+            // 
+            // distritoToolStripMenuItem
+            // 
+            this.distritoToolStripMenuItem.Name = "distritoToolStripMenuItem";
+            this.distritoToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.distritoToolStripMenuItem.Text = "Distrito";
+            this.distritoToolStripMenuItem.Click += new System.EventHandler(this.distritoToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -119,19 +135,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // cantonToolStripMenuItem
+            // usuarioToolStripMenuItem
             // 
-            this.cantonToolStripMenuItem.Name = "cantonToolStripMenuItem";
-            this.cantonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cantonToolStripMenuItem.Text = "Canton";
-            this.cantonToolStripMenuItem.Click += new System.EventHandler(this.cantonToolStripMenuItem_Click);
-            // 
-            // distritoToolStripMenuItem
-            // 
-            this.distritoToolStripMenuItem.Name = "distritoToolStripMenuItem";
-            this.distritoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.distritoToolStripMenuItem.Text = "Distrito";
-            this.distritoToolStripMenuItem.Click += new System.EventHandler(this.distritoToolStripMenuItem_Click);
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuarioToolStripMenuItem.Text = "Usuarios";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -169,6 +178,7 @@
         private System.Windows.Forms.ToolStripMenuItem votanteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cantonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem distritoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
     }
 }
 
