@@ -24,5 +24,11 @@ namespace Datos
             return MetodosDatos.BuscarDistrito(codElec);
         }
 
+        public static int ModificarDistrito(string codElec, string codProvincia, string codCanton,string Distrito)
+        {
+            SqlCommand _comando = MetodosDatos.ModificarDistrito(codElec, codProvincia, codCanton, Distrito);
+            return MetodosDatos.EjecutarProcedimientoAlmacenado(_comando);
+        }
+
     }
 }

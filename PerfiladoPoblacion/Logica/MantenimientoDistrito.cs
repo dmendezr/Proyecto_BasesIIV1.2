@@ -20,5 +20,9 @@ namespace Logica
         {
             return Datos.Distrito.BuscarDistrito(codElec);
         }
+        public static int ModicarDistrito( string codElec, string codProvincia, string codCanton, string Distrito)
+        {
+            return Datos.Distrito.ModificarDistrito(codElec, codProvincia, codCanton, Distrito);
+        }
     }
 }

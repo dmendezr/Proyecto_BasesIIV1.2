@@ -161,10 +161,16 @@ namespace Presentacion
                 DataSet ds = new DataSet();
                 String SELECT = FormarCadena();
                 String WHERE = FormarWhere();
+<<<<<<< HEAD
                 datos = Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE, usuario);
                 dgvConsulta.DataSource = datos;
                 ds.Tables.Add(Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE, usuario));
                 ds.WriteXmlSchema(@"C:\Users\Diego\Desktop\perfilacion.xml");
+=======
+                //dgvConsulta.DataSource = Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE,usuario);
+                ReporteDatos frmReporte = new ReporteDatos(Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE, usuario));
+                frmReporte.ShowDialog();
+>>>>>>> origin/master
                 limpiarCampos();
 
             }
@@ -210,6 +216,7 @@ namespace Presentacion
         {
         }
 
+<<<<<<< HEAD
         private void button2_Click(object sender, EventArgs e)
         {
             limpiarCampos();
@@ -220,6 +227,13 @@ namespace Presentacion
             String SELECT = FormarCadena();
             String WHERE = FormarWhere();
             
+=======
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+>>>>>>> origin/master
         }
     }
 }

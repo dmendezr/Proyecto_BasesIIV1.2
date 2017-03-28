@@ -23,11 +23,12 @@ namespace Datos
         }
 
 
-        public static SqlCommand InsertDeVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2)
+        public static SqlCommand InsertDeVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2, string usuario, string ip)
         {
             string _cadenaConexion = Configuracion.CadenaConexion;
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
             SqlCommand _comando = new SqlCommand("InsertDeVotante", _conexion);
+            _comando.CommandTimeout = 0;
             _comando.CommandType = CommandType.StoredProcedure;
             _comando.Parameters.Add("@Cedula", SqlDbType.NVarChar).Value = cedula;
             _comando.Parameters.Add("@codElec", SqlDbType.NVarChar).Value = codElec;
@@ -37,6 +38,8 @@ namespace Datos
             _comando.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
             _comando.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = apellido1;
             _comando.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = apellido2;
+            _comando.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = usuario;
+            _comando.Parameters.Add("@ip", SqlDbType.NVarChar).Value = ip;
             return _comando;
         }
 
@@ -55,7 +58,7 @@ namespace Datos
 
 
 
-        public static SqlCommand ModificacionVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2)
+        public static SqlCommand ModificacionVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2,string usuario, string ip)
         {
             string _cadenaConexion = Configuracion.CadenaConexion;
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
@@ -70,10 +73,12 @@ namespace Datos
             _comando.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
             _comando.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = apellido1;
             _comando.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = apellido2;
+            _comando.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = usuario;
+            _comando.Parameters.Add("@ip", SqlDbType.NVarChar).Value = ip;
             return _comando;
         }
 
-        public static SqlCommand EliminarVotante(string cedula)
+        public static SqlCommand EliminarVotante(string cedula,string usuario, string ip)
         {
             string _cadenaConexion = Configuracion.CadenaConexion;
             SqlConnection _conexion = new SqlConnection(_cadenaConexion);
@@ -81,6 +86,8 @@ namespace Datos
             _comando.CommandTimeout = 0;
             _comando.CommandType = CommandType.StoredProcedure;
             _comando.Parameters.Add("@Cedula", SqlDbType.NVarChar).Value = cedula;
+            _comando.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = usuario;
+            _comando.Parameters.Add("@ip", SqlDbType.NVarChar).Value = ip;
             return _comando;
         }
 
@@ -278,6 +285,35 @@ namespace Datos
             catch { throw; }
         }
 
+        public static SqlCommand ModificarDistrito(string codElec, string codProvincia, string codCanton, string Distrito)
+        {
+            string _cadenaConexion = Configuracion.CadenaConexion;
+            SqlConnection _conexion = new SqlConnection(_cadenaConexion);
+            SqlCommand _comando = new SqlCommand("ModificarDistrito", _conexion);
+            _comando.CommandTimeout = 0;
+            _comando.CommandType = CommandType.StoredProcedure;
+            _comando.Parameters.Add("@CodElec", SqlDbType.NVarChar).Value = codElec;
+            _comando.Parameters.Add("@codProvincia", SqlDbType.NVarChar).Value = codProvincia;
+            _comando.Parameters.Add("@codCanton", SqlDbType.NVarChar).Value = codCanton;
+            _comando.Parameters.Add("@Distrito", SqlDbType.NVarChar).Value = Distrito;
+       
+            return _comando;
+        }
+        public static SqlCommand InsertarUsuario(string idUsuario,string cedula, string idRol, string usuario, string contrasena)
+        {
+            string _cadenaConexion = Configuracion.CadenaConexion;
+            SqlConnection _conexion = new SqlConnection(_cadenaConexion);
+            SqlCommand _comando = new SqlCommand("InsertarUsuario", _conexion);
+            _comando.CommandType = CommandType.StoredProcedure;
+            _comando.Parameters.Add("@idUsuario", SqlDbType.NVarChar).Value = idUsuario;
+            _comando.Parameters.Add("@cedula", SqlDbType.NVarChar).Value = cedula;
+            _comando.Parameters.Add("@IdRol", SqlDbType.NVarChar).Value = idRol;
+            _comando.Parameters.Add("@usuario", SqlDbType.NVarChar).Value = usuario;
+            _comando.Parameters.Add("@contrasena", SqlDbType.NVarChar).Value = contrasena;
+
+
+            return _comando;
+        }
 
     }//fin SqlCommand
 }

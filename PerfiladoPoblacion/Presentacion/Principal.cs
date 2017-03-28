@@ -108,6 +108,11 @@ namespace Presentacion
 
         private void Principal_Load(object sender, EventArgs e)
         {
+            if (idRol == 2)
+            {
+                tsmAdministracion.Visible = false;
+                tsmAdministracion.Enabled = false;
+            }
             direccionIP = Logica.obtieneDireccionIP.DevuelveIP();
         }
 
@@ -129,7 +134,7 @@ namespace Presentacion
 
         private void votanteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdministracionVotante frmAdmVotante = new AdministracionVotante();
+            AdministracionVotante frmAdmVotante = new AdministracionVotante(usuario);
             frmAdmVotante.MdiParent = this;
             frmAdmVotante.Show();
         }
@@ -146,6 +151,14 @@ namespace Presentacion
             AdministracionDistricto frmAdmDistrito = new AdministracionDistricto();
             frmAdmDistrito.MdiParent = this;
             frmAdmDistrito.Show();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Usuarios frmAdmUsuarios = new Usuarios();
+            frmAdmUsuarios.MdiParent = this;
+            frmAdmUsuarios.Show();
+
         }
     }
 }

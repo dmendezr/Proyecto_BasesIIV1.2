@@ -51,6 +51,7 @@
     <Compile Include="ConsultaProvincias.cs" />
     <Compile Include="MantenimientoCantones.cs" />
     <Compile Include="MantenimientoDistrito.cs" />
+    <Compile Include="MantenimientoUsuario.cs" />
     <Compile Include="obtieneDireccionIP.cs" />
     <Compile Include="MantenimientoVotante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

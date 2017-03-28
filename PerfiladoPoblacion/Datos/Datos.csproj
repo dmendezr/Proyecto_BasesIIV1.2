@@ -51,6 +51,7 @@
     <Compile Include="Configuracion.cs" />
     <Compile Include="MetodosDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuariocs.cs" />
     <Compile Include="Votante.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

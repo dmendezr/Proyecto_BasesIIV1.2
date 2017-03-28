@@ -35,11 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodElec = new System.Windows.Forms.TextBox();
             this.txtDistrito = new System.Windows.Forms.TextBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -100,29 +100,21 @@
             this.txtDistrito.Size = new System.Drawing.Size(224, 20);
             this.txtDistrito.TabIndex = 6;
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(724, 90);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(616, 92);
+            this.btnModificar.Location = new System.Drawing.Point(654, 87);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(94, 32);
             this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(504, 90);
+            this.btnBuscar.Location = new System.Drawing.Point(542, 85);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(94, 32);
             this.btnBuscar.TabIndex = 9;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -130,9 +122,9 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(386, 90);
+            this.btnIngresar.Location = new System.Drawing.Point(424, 85);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresar.Size = new System.Drawing.Size(94, 32);
             this.btnIngresar.TabIndex = 10;
             this.btnIngresar.Text = "Ingresar ";
             this.btnIngresar.UseVisualStyleBackColor = true;
@@ -147,16 +139,26 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Distrito";
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(424, 85);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(94, 32);
+            this.btnNuevo.TabIndex = 12;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // AdministracionDistricto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 254);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtDistrito);
             this.Controls.Add(this.txtCodElec);
             this.Controls.Add(this.label3);
@@ -181,10 +183,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodElec;
         private System.Windows.Forms.TextBox txtDistrito;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

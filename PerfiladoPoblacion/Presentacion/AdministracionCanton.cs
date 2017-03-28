@@ -32,6 +32,7 @@ namespace Presentacion
         {
             try
             {
+                
                 int consulta = Logica.MantenimientoCantones.InsertDeCantones(txtcodCanton.Text,txtNombreCanton.Text);
                 if (consulta == 1)
                 {
@@ -40,7 +41,7 @@ namespace Presentacion
                     txtcodCanton.Enabled = false;
                     txtNombreCanton.Enabled = false;
                  
-                   // btnNuevo.Show();
+                   btnNuevo.Show();
                 }
                 else
                 {
@@ -104,5 +105,16 @@ namespace Presentacion
                 d.ShowDialog();
             }
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+            btnBuscar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnNuevo.Hide();
+            txtcodCanton.Enabled = true;
+            txtNombreCanton.Enabled = true;
+           
+    }
     }
 }
