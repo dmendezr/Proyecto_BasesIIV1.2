@@ -13,6 +13,7 @@ namespace Presentacion
     public partial class PerfilacionBasica : Form
     {
         public string usuario;
+        public DataTable datos = new DataTable();
         
         public PerfilacionBasica(string user)
         {
@@ -157,17 +158,30 @@ namespace Presentacion
         {
             try
             {
+                DataSet ds = new DataSet();
                 String SELECT = FormarCadena();
                 String WHERE = FormarWhere();
-                dgvConsulta.DataSource = Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE,usuario);
+                datos = Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE, usuario);
+                dgvConsulta.DataSource = datos;
+                ds.Tables.Add(Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE, usuario));
+                ds.WriteXmlSchema(@"C:\Users\Diego\Desktop\perfilacion.xml");
                 limpiarCampos();
-                
-            }catch (Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 var d = new ThreadExceptionDialog(ex);
                 d.ShowDialog();
             }
             
+        }
+
+        public DataSet devolverTablaReporte()
+        {
+            DataSet ds = new DataSet();
+            ds.Tables.Add(datos);
+            return ds;
+
         }
 
         private void PerfilacionBasica_Load(object sender, EventArgs e)
@@ -191,15 +205,21 @@ namespace Presentacion
 
         }
 
-<<<<<<< HEAD
+
         private void cbDistrito_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
 
-=======
         private void button2_Click(object sender, EventArgs e)
         {
             limpiarCampos();
->>>>>>> 0f32f139a0ae1de1034081038db595864be3de67
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            String SELECT = FormarCadena();
+            String WHERE = FormarWhere();
+            
         }
     }
 }
