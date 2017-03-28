@@ -244,8 +244,8 @@ namespace Presentacion
                     sexo = "2";
                 }
                 fecha = ManejarFecha();
-                int consulta = Logica.MantenimientoVotante.ModificacionVotante(txtCedula.Text, cmbCodElec.Text, sexo, fecha, txtJunta.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text);
-                if (consulta == 1)
+                int consulta = Logica.MantenimientoVotante.ModificacionVotante(txtCedula.Text, cmbCodElec.Text, sexo, fecha, txtJunta.Text, txtNombre.Text, txtApellido1.Text, txtApellido2.Text,usuario);
+                if (consulta == 2)
                 {
                     MessageBox.Show("Registro fue modificado correctamente");
                     LimpiarCampos();
@@ -279,8 +279,8 @@ namespace Presentacion
             {
                 
           
-                int consulta = Logica.MantenimientoVotante.EliminacionVotante(txtCedula.Text);
-                if (consulta == 1)
+                int consulta = Logica.MantenimientoVotante.EliminacionVotante(txtCedula.Text,usuario);
+                if (consulta == 2)
                 {
                     MessageBox.Show("Registro fue eliminado correctamente");
                     LimpiarCampos();
