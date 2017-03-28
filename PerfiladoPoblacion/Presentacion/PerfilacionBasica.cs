@@ -159,7 +159,9 @@ namespace Presentacion
             {
                 String SELECT = FormarCadena();
                 String WHERE = FormarWhere();
-                dgvConsulta.DataSource = Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE,usuario);
+                //dgvConsulta.DataSource = Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE,usuario);
+                ReporteDatos frmReporte = new ReporteDatos(Logica.DevuelveVotante.DevuelveVotantes(SELECT, WHERE, usuario));
+                frmReporte.ShowDialog();
                 limpiarCampos();
                 
             }catch (Exception ex)

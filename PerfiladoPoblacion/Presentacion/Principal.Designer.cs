@@ -34,14 +34,14 @@
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilacionBasicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilacionAvanzadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAdministracion = new System.Windows.Forms.ToolStripMenuItem();
             this.votanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cantonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.distritoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.consultaToolStripMenuItem,
-            this.administracionToolStripMenuItem});
+            this.tsmAdministracion});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
@@ -87,37 +87,44 @@
             this.perfilacionAvanzadaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.perfilacionAvanzadaToolStripMenuItem.Text = "Perfilacion Avanzada";
             // 
-            // administracionToolStripMenuItem
+            // tsmAdministracion
             // 
-            this.administracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmAdministracion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.votanteToolStripMenuItem,
             this.cantonToolStripMenuItem,
             this.distritoToolStripMenuItem,
             this.usuarioToolStripMenuItem});
-            this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
-            this.administracionToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.administracionToolStripMenuItem.Text = "Administracion";
+            this.tsmAdministracion.Name = "tsmAdministracion";
+            this.tsmAdministracion.Size = new System.Drawing.Size(100, 20);
+            this.tsmAdministracion.Text = "Administracion";
             // 
             // votanteToolStripMenuItem
             // 
             this.votanteToolStripMenuItem.Name = "votanteToolStripMenuItem";
-            this.votanteToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.votanteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.votanteToolStripMenuItem.Text = "Votante";
             this.votanteToolStripMenuItem.Click += new System.EventHandler(this.votanteToolStripMenuItem_Click);
             // 
             // cantonToolStripMenuItem
             // 
             this.cantonToolStripMenuItem.Name = "cantonToolStripMenuItem";
-            this.cantonToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.cantonToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cantonToolStripMenuItem.Text = "Canton";
             this.cantonToolStripMenuItem.Click += new System.EventHandler(this.cantonToolStripMenuItem_Click);
             // 
             // distritoToolStripMenuItem
             // 
             this.distritoToolStripMenuItem.Name = "distritoToolStripMenuItem";
-            this.distritoToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.distritoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.distritoToolStripMenuItem.Text = "Distrito";
             this.distritoToolStripMenuItem.Click += new System.EventHandler(this.distritoToolStripMenuItem_Click);
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuarioToolStripMenuItem.Text = "Usuarios";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -134,13 +141,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // usuarioToolStripMenuItem
-            // 
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.usuarioToolStripMenuItem.Text = "Usuarios";
-            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -174,7 +174,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem perfilacionBasicaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem perfilacionAvanzadaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem administracionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmAdministracion;
         private System.Windows.Forms.ToolStripMenuItem votanteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cantonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem distritoToolStripMenuItem;

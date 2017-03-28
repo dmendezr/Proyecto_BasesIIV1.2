@@ -21,9 +21,9 @@ namespace Datos
             return MetodosDatos.EjecutarComandoSelect(_comando);
         }
 
-        public static int InsertarVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2)
+        public static int InsertarVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2, string usuario, string ip)
         {
-            SqlCommand _comando = MetodosDatos.InsertDeVotante(cedula, codElec, sexo, fechaCaduc, junta, nombre, apellido1, apellido2);
+            SqlCommand _comando = MetodosDatos.InsertDeVotante(cedula, codElec, sexo, fechaCaduc, junta, nombre, apellido1, apellido2,usuario,ip);
 
             return MetodosDatos.EjecutarProcedimientoAlmacenado(_comando);
         }

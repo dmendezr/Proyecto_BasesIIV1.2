@@ -8,9 +8,10 @@ namespace Logica
 {
     public class MantenimientoVotante
     {
-        public static int InsertDeVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2)
+        public static int InsertDeVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2,string usuario)
         {
-            return Datos.Votante.InsertarVotante(cedula, codElec, sexo, fechaCaduc, junta, nombre, apellido1, apellido2);
+            string ip = obtieneDireccionIP.DevuelveIP();
+            return Datos.Votante.InsertarVotante(cedula, codElec, sexo, fechaCaduc, junta, nombre, apellido1, apellido2,usuario,ip);
         }
 
         public static int ModificacionVotante(string cedula, string codElec, string sexo, string fechaCaduc, string junta, string nombre, string apellido1, string apellido2)
